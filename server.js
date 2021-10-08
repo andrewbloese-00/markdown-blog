@@ -27,5 +27,4 @@ app.get('/', async (req,res)=>{
 app.use('/articles', require('./routes/articles'))
 
 
-
 app.listen(5000, ()=>{console.log('🚀 Server listening On port 5000')})
