@@ -88,6 +88,12 @@ router.delete('/:id', async(req,res)=>{
 })
 
 /*
+* parameters: (path) 
+* "new" -->  POST request
+* "edit" --> PUT request
+? Description: Helper function used by POST and PUT for the route: /articles/:id
+? creates an article or saves changes to an article. 
+
 */
 function save_and_redirect(path){
  //return async function
@@ -109,7 +115,7 @@ function save_and_redirect(path){
    article = await article.save()
    res.redirect(`/articles/${article.slug}`)
   } catch (e) {
-   console.error(`POST failed at /articles/:id ❌  for the path ${path}`)
+   console.error(`Request failed at /articles/:id ❌  for the path ${path}`)
    console.error(e)
    console.log(`articles/${path}/${article.slug}`)
    res.render(`articles/${path}/${article.slug}` ,{article: article})

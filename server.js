@@ -11,7 +11,6 @@ const Article = require('./models/article');
 connectMongo();
 
 
-
 //set the view engine to ejs
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended:false}))
